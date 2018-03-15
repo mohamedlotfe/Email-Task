@@ -1,0 +1,40 @@
+<link rel="stylesheet" href="https://unpkg.com/purecss@1.0.0/build/pure-min.css" integrity="sha384-" crossorigin="anonymous">
+<div id="nav" class="pure-u">
+    <a href="#" class="nav-menu-button">Menu</a>
+
+    <div class="nav-inner">
+        <button class="primary-button pure-button btn btn-primary comopse" (click)="createOne()">Compose</button>
+
+        <div class="pure-menu">
+            <ul class="pure-menu-list">
+                <li class="pure-menu-item" (click)="showAllEmail()"><a class="pure-menu-link"><span class="glyphicon glyphicon-envelope" aria-hidden="true"></span>Inbox </a></li>
+                <li class="pure-menu-item" (click)="showImportantEmail()">
+                    <a class="pure-menu-link">
+                        <span class="glyphicon glyphicon-flag" aria-hidden="true"></span>Important</a>
+                </li>
+                <li class="pure-menu-item" (click)="showSentEmail()"><a class="pure-menu-link">Sent</a></li>
+                <li class="pure-menu-item"><a class="pure-menu-link">Drafts</a></li>
+                <li class="pure-menu-item"><a class="pure-menu-link">Trash</a></li>
+                <li class="pure-menu-heading">Labels</li>
+                <li class="pure-menu-item"><a href="#" class="pure-menu-link"><span class="email-label-personal"></span>Personal</a></li>
+                <li class="pure-menu-item"><a href="#" class="pure-menu-link"><span class="email-label-work"></span>Work</a></li>
+                <li class="pure-menu-item"><a href="#" class="pure-menu-link"><span class="email-label-travel"></span>Travel</a></li>
+            </ul>
+        </div>
+    </div>
+    <script src="https://yui-s.yahooapis.com/3.18.1/build/yui/yui-min.js"></script>
+    <script>
+        YUI().use('node-base', 'node-event-delegate', function(Y) {
+
+            var menuButton = Y.one('.nav-menu-button'),
+                nav = Y.one('#nav');
+
+            // Setting the active class name expands the menu vertically on small screens.
+            menuButton.on('click', function(e) {
+                nav.toggleClass('active');
+            });
+
+            // Your application code goes here...
+
+        });
+    </script>

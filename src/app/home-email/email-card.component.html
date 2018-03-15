@@ -1,0 +1,19 @@
+<link rel="stylesheet" href="https://unpkg.com/purecss@1.0.0/build/pure-min.css" integrity="sha384-" crossorigin="anonymous">
+
+<div class="email-item {{email.emai_status}} pure-g" id="Card-{{email.id}}" (click)="showEmail(email.id)">
+    <div class=" pure-u ">
+        <div *ngIf="!hasImage ">
+            <img width="64 " height="64 " alt="Tilo Mitra&#x27;s avatar " class="email-avatar " src="../../assets/img/user-avatar.png " alt=" ">
+        </div>
+        <div *ngIf="hasImage ">
+            <img width="64 " height="64 " alt="Tilo Mitra&#x27;s avatar " class="email-avatar " src="{{email.sender_img_url}} " alt=" ">
+        </div>
+    </div>
+    <div class="pure-u-3-4 ">
+        <h5 class="email-name ">{{email.sender_name}}</h5>
+        <h4 class="email-subject ">{{email.email_subject}}</h4>
+        <p class="email-desc ">
+            {{email.email_desc}}
+        </p>
+    </div>
+</div>

@@ -1,0 +1,6 @@
+
+	'id': '5',
+      emai_status: 'xxx',
+      sender_name: 'Tilo Mitra',
+      sender_img_url: '../../assets/img/common/tilo-avatar.png',
+      email_subject: 'Hello From Toronto',

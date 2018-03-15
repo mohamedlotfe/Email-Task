@@ -1,0 +1,278 @@
+/*
+ * -- BASE STYLES --
+ * Most of these are inherited from Base, but I want to change a few.
+ */
+
+body {
+    color: #333;
+}
+
+a {
+    text-decoration: none;
+    color: #1b98f8;
+}
+
+* {
+    box-sizing: border-box;
+}
+
+
+/*
+ * -- EMAIL STYLES --
+ * Styles relevant to the email messages, labels, counts, and more.
+ */
+
+.primary-button,
+.secondary-button {
+    -webkit-box-shadow: none;
+    -moz-box-shadow: none;
+    box-shadow: none;
+    border-radius: 20px;
+}
+
+.primary-button {
+    color: #fff;
+    background: #1b98f8;
+    margin: 1em 0;
+}
+
+.secondary-button {
+    background: #fff;
+    border: 1px solid #2196f3;
+    color: #666;
+    padding: 0.5em 2em;
+    font-size: 80%;
+}
+
+.email_body {
+    width: 100%;
+    height: 50px;
+    border: none;
+    padding: 10px;
+    word-wrap: break-word;
+    border-radius: 5px
+}
+
+.email-count {
+    color: rgb(75, 113, 151);
+    font-size: 12px;
+    margin-left: 15%;
+    padding: 3px 5px;
+    background-color: #d6d9e0;
+    border-radius: 10px;
+}
+
+.email-label-personal,
+.email-label-work,
+.email-label-travel {
+    width: 15px;
+    height: 15px;
+    display: inline-block;
+    margin-right: 0.5em;
+    border-radius: 3px;
+}
+
+.email-label-personal {
+    background: #ffc94c;
+}
+
+.email-label-work {
+    background: #41ccb4;
+}
+
+.email-label-travel {
+    background: #40c365;
+}
+
+
+/* Email Item Styles */
+
+.email-item {
+    padding: 0.9em 1em;
+    border-bottom: 1px solid #ddd;
+    border-left: 6px solid transparent;
+}
+
+.email-avatar {
+    border-radius: 3px;
+    margin-right: 0.5em;
+}
+
+.email-name,
+.email-subject {
+    margin: 0;
+}
+
+.email-name {
+    text-transform: uppercase;
+    color: #999;
+}
+
+.email-desc {
+    font-size: 80%;
+    margin: 0.4em 0;
+}
+
+.email-item-selected {
+    background: #eee;
+}
+
+.email-item-unread {
+    border-left: 6px solid #1b98f8;
+}
+
+
+/* Email Content Styles */
+
+.email-content-header,
+.email-content-body,
+.email-content-footer {
+    padding: 1em 2em;
+}
+
+.email-content-header {
+    border-bottom: 1px solid #ddd;
+}
+
+.email-content-title {
+    margin: 0.5em 0 0;
+}
+
+.email-item:hover {
+    cursor: pointer;
+}
+
+.email-content-subtitle {
+    font-size: 1em;
+    margin: 0;
+    font-weight: normal;
+}
+
+@media (min-width: 1199px) {
+    #main {
+        min-width: 1010px !important;
+    }
+}
+
+.email-content-subtitle span {
+    color: #999;
+}
+
+.email-content-controls {
+    margin-top: 2em;
+    text-align: right;
+}
+
+.email-content-controls .secondary-button {
+    margin-bottom: 0.3em;
+}
+
+.email-avatar {
+    width: 40px;
+    height: 40px;
+}
+
+
+/*
+ * -- TABLET (AND UP) MEDIA QUERIES --
+ * On tablets and other medium-sized devices, we want to customize some
+ * of the mobile styles.
+ */
+
+@media (min-width: 40em) {
+    /* Move the layout over so we can fit the nav + list in on the left */
+    #layout {
+        padding-left: 500px;
+        /* "left col (nav + list)" width */
+        position: relative;
+    }
+    /* These are position:fixed; elements that will be in the left 500px of the screen */
+    #nav,
+    #list {
+        position: fixed;
+        top: 0;
+        bottom: 0;
+        overflow: auto;
+    }
+    #nav {
+        margin-left: -500px;
+        /* "left col (nav + list)" width */
+        width: 150px;
+        height: 100%;
+    }
+    /* Show the menu items on the larger screen */
+    .nav-inner {
+        display: block;
+        padding: 2em 0;
+    }
+    /* Hide the "Menu" button on larger screens */
+    #nav .nav-menu-button {
+        display: none;
+    }
+    #list {
+        margin-left: -350px;
+        width: 100%;
+        height: 33%;
+        border-bottom: 1px solid #ddd;
+    }
+    .pure-menu .glyphicon {
+        margin-right: 10px
+    }
+    #main {
+        position: fixed;
+        top: 33%;
+        right: 0;
+        bottom: 0;
+        left: 150px;
+        overflow: auto;
+        width: auto;
+        /* so that it's not 100% */
+    }
+}
+
+
+/*
+ * -- DESKTOP (AND UP) MEDIA QUERIES --
+ * On desktops and other large-sized devices, we want to customize some
+ * of the mobile styles.
+ */
+
+@media (min-width: 60em) {
+    /* This will take up the entire height, and be a little thinner */
+    #list {
+        margin-left: -350px;
+        width: 350px;
+        height: 100%;
+        border-right: 1px solid #ddd;
+    }
+    /* This will now take up it's own column, so don't need position: fixed; */
+    #main {
+        position: static;
+        margin: 0;
+        padding: 0;
+    }
+}
+
+@media (max-width:991px) {
+    #layout {
+        margin-left: 0px
+    }
+}
+
+.inputemails {
+    padding: 0px !important;
+    padding-left: 5px;
+    padding-bottom: 47px;
+    border: none;
+}
+
+email-content-header[_ngcontent-c4],
+.email-content-body[_ngcontent-c4],
+.email-content-footer[_ngcontent-c4] {
+    padding: 20px 14px 10px;
+}
+
+.bodyx {
+    background-color: #EEE;
+    padding: 10px;
+}

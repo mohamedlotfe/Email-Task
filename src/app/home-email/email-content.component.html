@@ -1,0 +1,54 @@
+<div id="main" class="pure-u-1">
+    <div class="email-content" *ngIf="email && !createEmail">
+        <div class="email-content-header pure-g">
+            <div class="pure-u-1-2">
+                <h1 class="email-content-title">{{email.email_subject}}</h1>
+                <p class="email-content-subtitle">
+                    From <a>{{email.sender_name}}</a> at <span>{{email.date}}</span>
+                </p>
+            </div>
+
+            <div class="email-content-controls pure-u-1-2">
+                <button class="secondary-button pure-button" (click)="replyClicked()">Reply</button>
+                <button class="secondary-button pure-button">Forward</button>
+            </div>
+        </div>
+
+        <div class="email-content-body bodyx">
+            {{email.email_body}}
+        </div>
+    </div>
+    <!--create new one  -->
+    <div class="email-content" *ngIf="createEmail">
+        <div class="email-content-header pure-g">
+            <div class="pure-u-1-2 ">
+                <tag-input [(ngModel)]='recievesEmailsList' name="recievesEmailsList" [addOnBlur]="true" [separatorKeyCodes]="[32,13,186,188,59]" [allowDupes]="true" class="form-control inputemails" secondaryPlaceholder="xxx@email.com" placeholder="+ Email" [addOnPaste]="true"
+                    (onAdd)="TagInputChange()" (onRemove)="TagInputChange()"></tag-input>
+            </div>
+
+            <div class="email-content-controls pure-u-1-2">
+                <button class="secondary-button pure-button send-button">Send</button>
+            </div>
+        </div>
+
+        <div class="email-content-body bodyx">
+            <textarea name="Text1" cols="40" rows="5" class="email_body" placeholder="    Enter Email content"></textarea>
+        </div>
+    </div>
+    <!-- if no Email selected yet-->
+    <div class="email-content" *ngIf="!email && !createEmail">
+        <div class="email-content-header pure-g">
+            <div class="pure-u-1-2">
+                <i class="glyphicon glyphicon-check"></i>
+                <span> Select Your Email</span>
+            </div>
+
+
+        </div>
+
+        <div class="email-content-body">
+            <img src="../../assets/img/email.png " width="50%" height="50%" style="margin-left: 20%;
+            margin-top: 10%; border-radius: 7px;">
+        </div>
+    </div>
+</div>
