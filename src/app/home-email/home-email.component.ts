@@ -13,6 +13,7 @@ export class HomeEmailComponent implements OnInit {
   selectedEmail: Email;
   newEmail: Boolean;
   tagName: String;
+  newContent: any;
   constructor(private _service: HomeEmailService) { }
 
   ngOnInit() {
@@ -31,5 +32,13 @@ export class HomeEmailComponent implements OnInit {
     this._service.getAllEmails(tagName, (res) => {
       this.emailsList = res;
     });
+  }
+  setNewEmailContent(newContent) {
+    this._service.setAnEmail(newContent, (res) => {
+      this._service.getAllEmails('All', (res2) => {
+        this.emailsList = res2;
+      });
+    });
+    this.newEmail = false;
   }
 }

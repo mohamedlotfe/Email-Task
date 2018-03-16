@@ -79,5 +79,10 @@ export class HomeEmailService {
     }
     return callback(this.emailList);
   }
+  setAnEmail(email, callback) {
+    
+    this.mailsPool.push(email);
+    console.log('services', this.mailsPool);
+  }
 }
 

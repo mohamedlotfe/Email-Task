@@ -4,6 +4,6 @@
     <div id="list" class="pure-u-1">
         <app-email-card *ngFor="let email of emailsList" [email]="email" (selected)="setSelectedEmail($event)"></app-email-card>
     </div>
-    <app-email-content [email]="selectedEmail" [createEmail]="newEmail"></app-email-content>
+    <app-email-content (addNewContent)="setNewEmailContent($event)" [email]="selectedEmail" [createEmail]="newEmail"></app-email-content>
 
 </div>
